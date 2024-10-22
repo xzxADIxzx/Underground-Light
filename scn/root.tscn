@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dad8r4l3b2mhe"]
+
+[ext_resource type="Script" path="res://src/Light/Singletons/Steam.cs" id="1_jdepp"]
+
+[node name="root" type="Node"]
+
+[node name="steam" type="Node" parent="."]
+process_mode = 4
+script = ExtResource("1_jdepp")
+AppID = 1966720

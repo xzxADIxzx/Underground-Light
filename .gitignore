@@ -6,3 +6,5 @@ lib/*
 *.sln
 *.import
 *.directory
+
+steam_appid.txt
