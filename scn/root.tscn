@@ -75,7 +75,7 @@ grow_vertical = 2
 
 [node name="crt" type="CanvasLayer" parent="overlays"]
 
-[node name="ColorRect" type="ColorRect" parent="overlays/crt"]
+[node name="rect" type="ColorRect" parent="overlays/crt"]
 material = SubResource("ShaderMaterial_d16ps")
 anchors_preset = 15
 anchor_right = 1.0
