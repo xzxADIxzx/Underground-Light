@@ -1,10 +1,84 @@
-[gd_scene load_steps=2 format=3 uid="uid://dad8r4l3b2mhe"]
+[gd_scene load_steps=13 format=3 uid="uid://dad8r4l3b2mhe"]
 
 [ext_resource type="Script" path="res://src/Light/Singletons/Steam.cs" id="1_jdepp"]
+[ext_resource type="Script" path="res://src/Light/Singletons/Overlays.cs" id="2_e1d07"]
+[ext_resource type="Shader" path="res://shaders/vignette.gdshader" id="3_nqma2"]
+[ext_resource type="Shader" path="res://shaders/grey-scale.gdshader" id="4_a8ugi"]
+[ext_resource type="Shader" path="res://shaders/blood.gdshader" id="5_qo2nv"]
+[ext_resource type="Shader" path="res://shaders/vhs.gdshader" id="6_ac2i4"]
+[ext_resource type="Shader" path="res://shaders/crt.gdshader" id="7_okd5t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ll71p"]
+shader = ExtResource("3_nqma2")
+shader_parameter/strength = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6gwgw"]
+shader = ExtResource("4_a8ugi")
+shader_parameter/strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n2ykp"]
+shader = ExtResource("5_qo2nv")
+shader_parameter/strength = -0.4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d16ps"]
+shader = ExtResource("7_okd5t")
 
 [node name="root" type="Node"]
 
 [node name="steam" type="Node" parent="."]
-process_mode = 4
 script = ExtResource("1_jdepp")
 AppID = 1966720
+
+[node name="overlays" type="Node" parent="."]
+script = ExtResource("2_e1d07")
+
+[node name="vignette" type="CanvasLayer" parent="overlays"]
+
+[node name="rect" type="ColorRect" parent="overlays/vignette"]
+material = SubResource("ShaderMaterial_ll71p")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="grey-scale" type="CanvasLayer" parent="overlays"]
+
+[node name="rect" type="ColorRect" parent="overlays/grey-scale"]
+material = SubResource("ShaderMaterial_6gwgw")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="blood" type="CanvasLayer" parent="overlays"]
+
+[node name="rect" type="ColorRect" parent="overlays/blood"]
+material = SubResource("ShaderMaterial_n2ykp")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="vhs" type="CanvasLayer" parent="overlays"]
+visible = false
+
+[node name="rect" type="ColorRect" parent="overlays/vhs"]
+material = SubResource("ShaderMaterial_bwtid")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="crt" type="CanvasLayer" parent="overlays"]
+
+[node name="ColorRect" type="ColorRect" parent="overlays/crt"]
+material = SubResource("ShaderMaterial_d16ps")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
