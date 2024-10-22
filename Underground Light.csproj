@@ -1,0 +1,16 @@
+<Project Sdk="Godot.NET.Sdk/4.3.0">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>Light</RootNamespace>
+    <NoWarn>IDE0028, IDE0044, IDE0062, IDE0130, IDE0290, IDE0300, IDE1006</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="lib\Facepunch.Steamworks.Win64.dll" />
+  </ItemGroup>
+
+</Project>
