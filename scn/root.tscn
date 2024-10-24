@@ -20,6 +20,9 @@ shader_parameter/strength = 0.0
 shader = ExtResource("5_qo2nv")
 shader_parameter/strength = -0.4
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bwtid"]
+shader = ExtResource("6_ac2i4")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d16ps"]
 shader = ExtResource("7_okd5t")
 
@@ -63,7 +66,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="vhs" type="CanvasLayer" parent="overlays"]
-visible = false
 
 [node name="rect" type="ColorRect" parent="overlays/vhs"]
 material = SubResource("ShaderMaterial_bwtid")

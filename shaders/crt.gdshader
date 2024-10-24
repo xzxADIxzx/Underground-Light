@@ -4,7 +4,7 @@ render_mode unshaded;
 uniform sampler2D screen : hint_screen_texture, repeat_disable, filter_nearest;
 
 void fragment() {
-	vec2 shift = (vec2(2.0) - sin(UV.yx * PI)) * 0.05;
+	vec2 shift = (vec2(1.2) - sin(UV.yx * PI)) * 0.05;
 	vec2 scale = vec2(1.0) + shift * 2.0;
 
 	vec2 uv = UV * scale - shift;
