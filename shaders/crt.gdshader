@@ -11,10 +11,6 @@ void fragment() {
 	bool mask = uv.x >= 0.0 && uv.x <= 1.0 && uv.y >= 0.0 && uv.y <= 1.0;
 
 	COLOR = mask ? texture(screen, uv) : vec4(0.0, 0.0, 0.0, 1.0);
-	
-	if (mask)
-	{
-		float x = uv.x - 0.5, y = uv.y - 0.5;
-		COLOR.rgb *= 1.0 - sqrt(x * x + y * y) * 1.1;
-	}
+
+	if (mask) COLOR.rgb *= 1.0 - pow(abs(uv.x - 0.5), 6.0) * 48.0 - pow(abs(uv.y - 0.5), 6.0) * 48.0;
 }
