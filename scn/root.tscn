@@ -102,14 +102,62 @@ offset_right = -64.0
 offset_bottom = -64.0
 theme = ExtResource("8_y7jn0")
 
+[node name="tutorial" type="Button" parent="menu/main-menu/panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_top = -120.0
+offset_right = 450.0
+offset_bottom = -72.0
+text = "TUTORIAL"
+alignment = 0
+
+[node name="host" type="Button" parent="menu/main-menu/panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_top = -72.0
+offset_right = 450.0
+offset_bottom = -24.0
+text = "HOST"
+alignment = 0
+
+[node name="join" type="Button" parent="menu/main-menu/panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_top = -24.0
+offset_right = 450.0
+offset_bottom = 24.0
+text = "JOIN"
+alignment = 0
+
+[node name="options" type="Button" parent="menu/main-menu/panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_top = 24.0
+offset_right = 450.0
+offset_bottom = 72.0
+text = "SETTINGS"
+alignment = 0
+
 [node name="exit" type="Button" parent="menu/main-menu/panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 1.0
-anchor_bottom = 1.0
+anchor_top = 0.5
+anchor_bottom = 0.5
 offset_left = 64.0
-offset_right = 320.0
-offset_bottom = -64.0
-grow_vertical = 0
+offset_top = 72.0
+offset_right = 450.0
+offset_bottom = 120.0
 text = "EXIT"
 alignment = 0
