@@ -7,6 +7,7 @@
 [ext_resource type="Shader" path="res://shaders/blood.gdshader" id="5_qo2nv"]
 [ext_resource type="Shader" path="res://shaders/vhs.gdshader" id="6_ac2i4"]
 [ext_resource type="Shader" path="res://shaders/crt.gdshader" id="7_okd5t"]
+[ext_resource type="Theme" uid="uid://btbl6i77wh1w4" path="res://themes/default.tres" id="8_y7jn0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ll71p"]
 shader = ExtResource("3_nqma2")
@@ -99,6 +100,7 @@ offset_left = 64.0
 offset_top = 64.0
 offset_right = -64.0
 offset_bottom = -64.0
+theme = ExtResource("8_y7jn0")
 
 [node name="exit" type="Button" parent="menu/main-menu/panel"]
 layout_mode = 1
