@@ -6,7 +6,7 @@ using Godot;
 public partial class Overlays : Singleton<Overlays>
 {
     /// <summary> Overlays that use shaders as materials. </summary>
-    public ColorRect Vignette, Scale, Blood, VHS, CRT;
+    public ColorRect Vignette, Scale, Blood, VHS, CRT, Distortion;
     /// <summary> Parameters of the strength of shaders. </summary>
     public float VignetteValue, ScaleValue, BloodValue;
 
@@ -22,8 +22,9 @@ public partial class Overlays : Singleton<Overlays>
         Blood = GetNode<ColorRect>("blood/rect");
         VHS = GetNode<ColorRect>("vhs/rect");
         CRT = GetNode<ColorRect>("crt/rect");
+        Distortion = GetNode<ColorRect>("distortion/rect");
 
-        VHS.Visible = CRT.Visible = false;
+        VHS.Visible = CRT.Visible = Distortion.Visible = false;
     }
 
     public override void _Process(double delta)

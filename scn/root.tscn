@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dad8r4l3b2mhe"]
+[gd_scene load_steps=16 format=3 uid="uid://dad8r4l3b2mhe"]
 
 [ext_resource type="Script" path="res://src/Light/Singletons/Steam.cs" id="1_jdepp"]
 [ext_resource type="Script" path="res://src/Light/Singletons/Overlays.cs" id="2_e1d07"]
@@ -6,6 +6,7 @@
 [ext_resource type="Shader" path="res://shaders/grey-scale.gdshader" id="4_a8ugi"]
 [ext_resource type="Shader" path="res://shaders/blood.gdshader" id="5_qo2nv"]
 [ext_resource type="Shader" path="res://shaders/vhs.gdshader" id="6_ac2i4"]
+[ext_resource type="Shader" path="res://shaders/distortion.gdshader" id="7_2gmbk"]
 [ext_resource type="Shader" path="res://shaders/crt.gdshader" id="7_okd5t"]
 [ext_resource type="Theme" uid="uid://btbl6i77wh1w4" path="res://themes/default.tres" id="8_y7jn0"]
 
@@ -23,6 +24,9 @@ shader_parameter/strength = -0.4
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bwtid"]
 shader = ExtResource("6_ac2i4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sfdh3"]
+shader = ExtResource("7_2gmbk")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d16ps"]
 shader = ExtResource("7_okd5t")
@@ -76,6 +80,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="distortion" type="CanvasLayer" parent="overlays"]
+layer = 3
+
+[node name="rect" type="ColorRect" parent="overlays/distortion"]
+material = SubResource("ShaderMaterial_sfdh3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
 [node name="crt" type="CanvasLayer" parent="overlays"]
 layer = 3
 
@@ -86,6 +102,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="menu" type="Node" parent="."]
 
