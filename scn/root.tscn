@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dad8r4l3b2mhe"]
+[gd_scene load_steps=14 format=3 uid="uid://dad8r4l3b2mhe"]
 
 [ext_resource type="Script" path="res://src/Light/Singletons/Steam.cs" id="1_jdepp"]
 [ext_resource type="Script" path="res://src/Light/Singletons/Overlays.cs" id="2_e1d07"]
@@ -76,6 +76,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="crt" type="CanvasLayer" parent="overlays"]
+layer = 3
 
 [node name="rect" type="ColorRect" parent="overlays/crt"]
 material = SubResource("ShaderMaterial_d16ps")
@@ -84,3 +85,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="menu" type="Node" parent="."]
+
+[node name="main-menu" type="CanvasLayer" parent="menu"]
+layer = 2
+
+[node name="panel" type="Panel" parent="menu/main-menu"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = -64.0
+offset_bottom = -64.0
+
+[node name="exit" type="Button" parent="menu/main-menu/panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_right = 320.0
+offset_bottom = -64.0
+grow_vertical = 0
+text = "EXIT"
+alignment = 0
