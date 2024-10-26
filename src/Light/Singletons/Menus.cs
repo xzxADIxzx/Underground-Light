@@ -5,15 +5,15 @@ using Godot;
 /// <summary> Singleton responsible for managing user interface. </summary>
 public partial class Menus : Singleton<Menus>
 {
-    /// <summary> Menu elements. </summary>
+    /// <summary> All interface elements. There are few of them, so as not to interfere with immersion. </summary>
     public CanvasLayer MainMenu, Settings;
 
     public override void _Ready()
     {
         Inst = this;
 
-        MainMenu = GetNode<CanvasLayer>("main-menu");
-        Settings = GetNode<CanvasLayer>("settings");
+        MainMenu = GetNode<CanvasLayer>("viewport/main-menu");
+        Settings = GetNode<CanvasLayer>("viewport/settings");
 
         ShowMain();
     }

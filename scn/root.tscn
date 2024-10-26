@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dad8r4l3b2mhe"]
+[gd_scene load_steps=18 format=3 uid="uid://dad8r4l3b2mhe"]
 
 [ext_resource type="Script" path="res://src/Light/Singletons/Steam.cs" id="1_jdepp"]
 [ext_resource type="Script" path="res://src/Light/Singletons/Overlays.cs" id="2_e1d07"]
@@ -32,6 +32,10 @@ shader = ExtResource("7_2gmbk")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d16ps"]
 shader = ExtResource("7_okd5t")
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fqubr"]
+blend_mode = 1
+light_mode = 1
+
 [node name="root" type="Node"]
 
 [node name="steam" type="Node" parent="."]
@@ -42,6 +46,7 @@ AppID = 1966720
 script = ExtResource("2_e1d07")
 
 [node name="vignette" type="CanvasLayer" parent="overlays"]
+layer = -1
 
 [node name="rect" type="ColorRect" parent="overlays/vignette"]
 material = SubResource("ShaderMaterial_ll71p")
@@ -52,6 +57,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="grey-scale" type="CanvasLayer" parent="overlays"]
+layer = -1
 
 [node name="rect" type="ColorRect" parent="overlays/grey-scale"]
 material = SubResource("ShaderMaterial_6gwgw")
@@ -62,6 +68,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="blood" type="CanvasLayer" parent="overlays"]
+layer = -1
 
 [node name="rect" type="ColorRect" parent="overlays/blood"]
 material = SubResource("ShaderMaterial_n2ykp")
@@ -72,6 +79,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="vhs" type="CanvasLayer" parent="overlays"]
+layer = -1
 
 [node name="rect" type="ColorRect" parent="overlays/vhs"]
 material = SubResource("ShaderMaterial_bwtid")
@@ -82,7 +90,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="distortion" type="CanvasLayer" parent="overlays"]
-layer = 3
 
 [node name="rect" type="ColorRect" parent="overlays/distortion"]
 material = SubResource("ShaderMaterial_sfdh3")
@@ -94,7 +101,6 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="crt" type="CanvasLayer" parent="overlays"]
-layer = 3
 
 [node name="rect" type="ColorRect" parent="overlays/crt"]
 material = SubResource("ShaderMaterial_d16ps")
@@ -105,13 +111,21 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="menus" type="Node" parent="."]
+[node name="menus" type="SubViewportContainer" parent="."]
+material = SubResource("CanvasItemMaterial_fqubr")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
 script = ExtResource("9_l6aj3")
 
-[node name="main-menu" type="CanvasLayer" parent="menus"]
-layer = 2
+[node name="viewport" type="SubViewport" parent="menus"]
+transparent_bg = true
+size = Vector2i(1920, 1080)
 
-[node name="panel" type="Panel" parent="menus/main-menu"]
+[node name="main-menu" type="Panel" parent="menus/viewport"]
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -121,7 +135,7 @@ offset_right = -64.0
 offset_bottom = -64.0
 theme = ExtResource("8_y7jn0")
 
-[node name="tutorial" type="Button" parent="menus/main-menu/panel"]
+[node name="tutorial" type="Button" parent="menus/viewport/main-menu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.5
@@ -133,7 +147,7 @@ offset_bottom = -72.0
 text = "TUTORIAL"
 alignment = 0
 
-[node name="host" type="Button" parent="menus/main-menu/panel"]
+[node name="host" type="Button" parent="menus/viewport/main-menu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.5
@@ -145,7 +159,7 @@ offset_bottom = -24.0
 text = "HOST"
 alignment = 0
 
-[node name="join" type="Button" parent="menus/main-menu/panel"]
+[node name="join" type="Button" parent="menus/viewport/main-menu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.5
@@ -157,7 +171,7 @@ offset_bottom = 24.0
 text = "JOIN"
 alignment = 0
 
-[node name="settings" type="Button" parent="menus/main-menu/panel"]
+[node name="settings" type="Button" parent="menus/viewport/main-menu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.5
@@ -169,7 +183,7 @@ offset_bottom = 72.0
 text = "SETTINGS"
 alignment = 0
 
-[node name="exit" type="Button" parent="menus/main-menu/panel"]
+[node name="exit" type="Button" parent="menus/viewport/main-menu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.5
@@ -181,10 +195,7 @@ offset_bottom = 120.0
 text = "EXIT"
 alignment = 0
 
-[node name="settings" type="CanvasLayer" parent="menus"]
-layer = 2
-
-[node name="panel" type="Panel" parent="menus/settings"]
+[node name="settings" type="Panel" parent="menus/viewport"]
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -194,7 +205,7 @@ offset_right = -64.0
 offset_bottom = -64.0
 theme = ExtResource("8_y7jn0")
 
-[node name="cancel" type="Button" parent="menus/settings/panel"]
+[node name="cancel" type="Button" parent="menus/viewport/settings"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
@@ -205,7 +216,7 @@ offset_right = 450.0
 offset_bottom = -64.0
 text = "CANCEL"
 
-[node name="apply" type="Button" parent="menus/settings/panel"]
+[node name="apply" type="Button" parent="menus/viewport/settings"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
@@ -216,7 +227,7 @@ offset_right = 836.0
 offset_bottom = -64.0
 text = "APPLY"
 
-[connection signal="pressed" from="menus/main-menu/panel/settings" to="menus" method="ShowSettings"]
-[connection signal="pressed" from="menus/main-menu/panel/exit" to="menus" method="Exit"]
-[connection signal="pressed" from="menus/settings/panel/cancel" to="menus" method="ShowMain"]
-[connection signal="pressed" from="menus/settings/panel/apply" to="menus" method="ShowMain"]
+[connection signal="pressed" from="menus/viewport/main-menu/settings" to="menus" method="ShowSettings"]
+[connection signal="pressed" from="menus/viewport/main-menu/exit" to="menus" method="Exit"]
+[connection signal="pressed" from="menus/viewport/settings/cancel" to="menus" method="ShowMain"]
+[connection signal="pressed" from="menus/viewport/settings/apply" to="menus" method="ShowMain"]
