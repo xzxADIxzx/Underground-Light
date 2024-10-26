@@ -17,6 +17,8 @@ public partial class Overlays : Singleton<Overlays>
 
     public override void _Ready()
     {
+        Inst = this;
+
         Vignette = GetNode<ColorRect>("vignette/rect");
         Scale = GetNode<ColorRect>("grey-scale/rect");
         Blood = GetNode<ColorRect>("blood/rect");
