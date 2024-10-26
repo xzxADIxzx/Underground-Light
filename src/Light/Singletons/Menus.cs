@@ -6,32 +6,30 @@ using Godot;
 public partial class Menus : Singleton<Menus>
 {
     /// <summary> All interface elements. There are few of them, so as not to interfere with immersion. </summary>
-    public Panel MainMenu, Settings;
+    public Panel MainMenu, Host, Join, Settings;
 
     public override void _Ready()
     {
         Inst = this;
 
         MainMenu = GetNode<Panel>("viewport/main-menu");
+        Host = GetNode<Panel>("viewport/join");
+        Join = GetNode<Panel>("viewport/join");
         Settings = GetNode<Panel>("viewport/settings");
 
         ShowMain();
     }
 
-    public void ShowMain()
-    {
-        Hide();
-        MainMenu.Visible = true;
-    }
+    public void ShowMain() { Hide(); MainMenu.Visible = true; }
 
-    public void ShowSettings()
-    {
-        Hide();
-        Settings.Visible = true;
-    }
+    public void ShowHost() { Hide(); Host.Visible = true; }
+
+    public void ShowJoin() { Hide(); Join.Visible = true; }
+
+    public void ShowSettings() { Hide(); Settings.Visible = true; }
 
     /// <summary> Hides all menus. </summary>
-    public void Hide() => MainMenu.Visible = Settings.Visible = false;
+    public void Hide() => MainMenu.Visible = Host.Visible = Join.Visible = Settings.Visible = false;
 
     /// <summary> Closes the game application. </summary>
     public void Exit() => GetTree().Quit();

@@ -14,7 +14,7 @@ void fragment()
 	float line_1 = smoothstep(0.999, 1.0, sin(UV.y * 4.0 - TIME)) * 0.02;
 	float line_2 = smoothstep(0.999, 1.0, sin(UV.y * 6.0 - TIME * 1.9)) * 0.02;
 
-	float strength = smoothstep(0.0, 0.5, 1.0 - abs(UV.y - 0.5) * 2.0);
+	float strength = smoothstep(0.15, 0.5, 1.0 - abs(UV.y - 0.5) * 2.0);
 
 	vec2 disto_1 = vec2(line_1 / 20.0, line_1) * strength;
 	vec2 disto_2 = vec2(line_2 / 16.0, line_2) * strength;
