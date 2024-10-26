@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://btbl6i77wh1w4"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://btbl6i77wh1w4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j6kdd"]
 content_margin_left = 8.0
@@ -8,6 +8,23 @@ content_margin_right = 8.0
 content_margin_left = 8.0
 content_margin_right = 8.0
 bg_color = Color(0.533333, 0.8, 0.866667, 0.8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ofuk2"]
+draw_center = false
+border_width_left = 8
+border_width_right = 8
+border_color = Color(0.533333, 0.8, 0.866667, 0.8)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s0mct"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_40fih"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+draw_center = false
+border_width_bottom = 4
+border_color = Color(0.533333, 0.8, 0.866667, 0.8)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ye6c4"]
 draw_center = false
@@ -31,4 +48,16 @@ Button/styles/focus = SubResource("StyleBoxFlat_0y4uu")
 Button/styles/hover = SubResource("StyleBoxFlat_0y4uu")
 Button/styles/normal = SubResource("StyleBoxEmpty_j6kdd")
 Button/styles/pressed = SubResource("StyleBoxFlat_0y4uu")
+Label/colors/font_color = Color(0.533333, 0.8, 0.866667, 0.8)
+Label/styles/normal = SubResource("StyleBoxFlat_ofuk2")
+LineEdit/colors/caret_color = Color(0.533333, 0.8, 0.866667, 0.8)
+LineEdit/colors/font_color = Color(0.533333, 0.8, 0.866667, 0.8)
+LineEdit/colors/font_placeholder_color = Color(0.533333, 0.8, 0.866667, 0.533333)
+LineEdit/colors/font_selected_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_uneditable_color = Color(0.533333, 0.8, 0.866667, 0.533333)
+LineEdit/colors/selection_color = Color(0.533333, 0.8, 0.866667, 0.8)
+LineEdit/constants/caret_width = 4
+LineEdit/font_sizes/font_size = 28
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_s0mct")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_40fih")
 Panel/styles/panel = SubResource("StyleBoxFlat_ye6c4")
