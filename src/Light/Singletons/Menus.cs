@@ -6,14 +6,14 @@ using Godot;
 public partial class Menus : Singleton<Menus>
 {
     /// <summary> All interface elements. There are few of them, so as not to interfere with immersion. </summary>
-    public CanvasLayer MainMenu, Settings;
+    public Panel MainMenu, Settings;
 
     public override void _Ready()
     {
         Inst = this;
 
-        MainMenu = GetNode<CanvasLayer>("viewport/main-menu");
-        Settings = GetNode<CanvasLayer>("viewport/settings");
+        MainMenu = GetNode<Panel>("viewport/main-menu");
+        Settings = GetNode<Panel>("viewport/settings");
 
         ShowMain();
     }
