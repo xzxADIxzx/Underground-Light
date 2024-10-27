@@ -1,4 +1,4 @@
-namespace Light;
+namespace Light.Singletons;
 
 using Godot;
 
