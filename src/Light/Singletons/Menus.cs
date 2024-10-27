@@ -13,7 +13,7 @@ public partial class Menus : Singleton<Menus>
         Inst = this;
 
         MainMenu = GetNode<Panel>("viewport/main-menu");
-        Host = GetNode<Panel>("viewport/join");
+        Host = GetNode<Panel>("viewport/host");
         Join = GetNode<Panel>("viewport/join");
         Settings = GetNode<Panel>("viewport/settings");
 

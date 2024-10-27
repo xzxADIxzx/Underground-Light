@@ -40,7 +40,7 @@ light_mode = 1
 
 [node name="steam" type="Node" parent="."]
 script = ExtResource("1_jdepp")
-AppID = 1966720
+AppID = 1229490
 
 [node name="overlays" type="Node" parent="."]
 script = ExtResource("2_e1d07")
@@ -195,6 +195,117 @@ offset_bottom = 120.0
 text = "EXIT"
 alignment = 0
 
+[node name="host" type="Panel" parent="menus/viewport"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = -64.0
+offset_bottom = -64.0
+theme = ExtResource("8_y7jn0")
+
+[node name="lobby-name" type="Label" parent="menus/viewport/host"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 64.0
+offset_right = 200.0
+offset_bottom = 112.0
+text = "LOBBY NAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="name" type="LineEdit" parent="menus/viewport/host"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 112.0
+offset_right = 200.0
+offset_bottom = 160.0
+placeholder_text = "DESCENDING TO THE ABYSS"
+context_menu_enabled = false
+
+[node name="lobby-accessibility" type="Label" parent="menus/viewport/host"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 208.0
+offset_right = 200.0
+offset_bottom = 256.0
+text = "ACCESSIBILITY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="accessibility" type="Button" parent="menus/viewport/host"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 256.0
+offset_right = 200.0
+offset_bottom = 304.0
+text = "PRIVATE"
+
+[node name="lobby-options" type="Label" parent="menus/viewport/host"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 352.0
+offset_right = 200.0
+offset_bottom = 400.0
+text = "OPTIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="plug" type="Label" parent="menus/viewport/host"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 400.0
+offset_right = 200.0
+offset_bottom = 448.0
+text = "COMING NOT SOON"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="host" type="Button" parent="menus/viewport/host"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -160.0
+offset_right = 200.0
+offset_bottom = -112.0
+text = "DESCEND"
+
+[node name="back" type="Button" parent="menus/viewport/host"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -112.0
+offset_right = 200.0
+offset_bottom = -160.0
+text = "BACK"
+
 [node name="join" type="Panel" parent="menus/viewport"]
 anchors_preset = -1
 anchor_right = 1.0
@@ -277,32 +388,37 @@ offset_right = -64.0
 offset_bottom = -64.0
 theme = ExtResource("8_y7jn0")
 
-[node name="cancel" type="Button" parent="menus/viewport/settings"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 64.0
-offset_top = -112.0
-offset_right = 450.0
-offset_bottom = -64.0
-text = "CANCEL"
-
 [node name="apply" type="Button" parent="menus/viewport/settings"]
 layout_mode = 1
 anchors_preset = -1
+anchor_left = 0.5
 anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 450.0
-offset_top = -112.0
-offset_right = 836.0
-offset_bottom = -64.0
+offset_left = -200.0
+offset_top = -160.0
+offset_right = 200.0
+offset_bottom = -112.0
 text = "APPLY"
+
+[node name="cancel" type="Button" parent="menus/viewport/settings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -112.0
+offset_right = 200.0
+offset_bottom = -64.0
+text = "CANCEL"
 
 [connection signal="pressed" from="menus/viewport/main-menu/host" to="menus" method="ShowHost"]
 [connection signal="pressed" from="menus/viewport/main-menu/join" to="menus" method="ShowJoin"]
 [connection signal="pressed" from="menus/viewport/main-menu/settings" to="menus" method="ShowSettings"]
 [connection signal="pressed" from="menus/viewport/main-menu/exit" to="menus" method="Exit"]
+[connection signal="pressed" from="menus/viewport/host/back" to="menus" method="ShowMain"]
 [connection signal="pressed" from="menus/viewport/join/back" to="menus" method="ShowMain"]
-[connection signal="pressed" from="menus/viewport/settings/cancel" to="menus" method="ShowMain"]
 [connection signal="pressed" from="menus/viewport/settings/apply" to="menus" method="ShowMain"]
+[connection signal="pressed" from="menus/viewport/settings/cancel" to="menus" method="ShowMain"]
