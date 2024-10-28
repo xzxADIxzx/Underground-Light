@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dad8r4l3b2mhe"]
+[gd_scene load_steps=19 format=3 uid="uid://dad8r4l3b2mhe"]
 
 [ext_resource type="Script" path="res://src/Light/Singletons/Steam.cs" id="1_jdepp"]
 [ext_resource type="Script" path="res://src/Light/Singletons/Overlays.cs" id="2_e1d07"]
@@ -10,6 +10,7 @@
 [ext_resource type="Shader" path="res://shaders/crt.gdshader" id="7_okd5t"]
 [ext_resource type="Theme" uid="uid://btbl6i77wh1w4" path="res://themes/default.tres" id="8_y7jn0"]
 [ext_resource type="Script" path="res://src/Light/Singletons/Menus.cs" id="9_l6aj3"]
+[ext_resource type="Script" path="res://src/Light/UI/HudPanel.cs" id="11_gt7uv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ll71p"]
 shader = ExtResource("3_nqma2")
@@ -133,7 +134,9 @@ offset_left = 64.0
 offset_top = 64.0
 offset_right = -64.0
 offset_bottom = -64.0
+pivot_offset = Vector2(896, 476)
 theme = ExtResource("8_y7jn0")
+script = ExtResource("11_gt7uv")
 
 [node name="tutorial" type="Button" parent="menus/viewport/main-menu"]
 layout_mode = 1
@@ -203,7 +206,9 @@ offset_left = 64.0
 offset_top = 64.0
 offset_right = -64.0
 offset_bottom = -64.0
+pivot_offset = Vector2(896, 476)
 theme = ExtResource("8_y7jn0")
+script = ExtResource("11_gt7uv")
 
 [node name="lobby-name" type="Label" parent="menus/viewport/host"]
 layout_mode = 1
@@ -314,7 +319,9 @@ offset_left = 64.0
 offset_top = 64.0
 offset_right = -64.0
 offset_bottom = -64.0
+pivot_offset = Vector2(896, 476)
 theme = ExtResource("8_y7jn0")
+script = ExtResource("11_gt7uv")
 
 [node name="invitation-code" type="Label" parent="menus/viewport/join"]
 layout_mode = 1
@@ -386,7 +393,9 @@ offset_left = 64.0
 offset_top = 64.0
 offset_right = -64.0
 offset_bottom = -64.0
+pivot_offset = Vector2(896, 476)
 theme = ExtResource("8_y7jn0")
+script = ExtResource("11_gt7uv")
 
 [node name="apply" type="Button" parent="menus/viewport/settings"]
 layout_mode = 1

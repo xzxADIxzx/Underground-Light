@@ -4,7 +4,7 @@ using Godot;
 using System;
 
 /// <summary> Custom logger used only by the game for convenience. </summary>
-public class Log
+public static class Log
 {
     /// <summary> Time format used by the logger. </summary>
     public const string TIME_FORMAT = "yyyy.MM.dd HH:mm:ss";
