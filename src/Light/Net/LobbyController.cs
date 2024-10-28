@@ -17,6 +17,24 @@ public static class LobbyController
     /// <summary> Whether the local player owns the lobby. </summary>
     public static bool IsOwner;
 
+    public static void Load()
+    {
+        // general info about the lobby
+        Events.OnLobbyAction += () => Log.Debug($"Lobby owner is {Lobby?.Owner.ToString() ?? "null"}, level is {Lobby?.GetData("level") ?? "null"}");
+        // get the owner id when entering a lobby
+        Events.OnLobbyEntered += () =>
+        {
+            if (Offline) return;
+            Log.Info($"Entered the lobby ({LastOwner = Lobby?.Owner.Id ?? 0L})");
+        };
+        // and leave the lobby if the owner has left it
+        Events.OnMemberLeave += member =>
+        {
+            if (member.Id == LastOwner) LeaveLobby();
+            Log.Debug("Because the owner has left it");
+        };
+    }
+
     #region control
 
     /// <summary> Creates a new lobby and connects to it. </summary>

@@ -25,8 +25,6 @@ public partial class Overlays : Singleton<Overlays>
         VHS = GetNode<ColorRect>("vhs/rect");
         CRT = GetNode<ColorRect>("crt/rect");
         Distortion = GetNode<ColorRect>("distortion/rect");
-
-        VHS.Visible = CRT.Visible = Distortion.Visible = false;
     }
 
     public override void _Process(double delta)
