@@ -14,7 +14,7 @@ public partial class Singleton<T> : Node
         set
         {
             instance = value;
-            GD.Print($"Initializing {typeof(T).Name} singleton...");
+            Log.Info($"Initializing {typeof(T).Name} singleton...");
         }
     }
 }

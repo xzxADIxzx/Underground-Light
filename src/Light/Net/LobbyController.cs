@@ -23,7 +23,7 @@ public static class LobbyController
     public static void CreateLobby(Cons<Lobby> cons)
     {
         if (Online) return;
-        GD.Print("Creating a lobby...");
+        Log.Info("Creating a lobby...");
 
         SteamMatchmaking.CreateLobbyAsync(4).ContinueWith(task =>
         {
@@ -41,7 +41,7 @@ public static class LobbyController
     public static void LeaveLobby()
     {
         if (Offline) return;
-        GD.Print("Leaving the lobby...");
+        Log.Info("Leaving the lobby...");
 
         Lobby?.Leave();
         Lobby = null;
@@ -54,7 +54,7 @@ public static class LobbyController
     public static void JoinLobby(Lobby lobby, Cons<RoomEnter> cons)
     {
         if (Lobby?.Id == lobby.Id) return;
-        GD.Print("Joining a lobby...");
+        Log.Info("Joining a lobby...");
 
         // leave the previous lobby before joining the new one
         if (Online) LeaveLobby();
@@ -76,12 +76,14 @@ public static class LobbyController
     /// <summary> Copies the lobby code to the clipboard. </summary>
     public static void CopyCode()
     {
+        Log.Debug("Copying the lobby code to the clipboard...");
         DisplayServer.ClipboardSet(Lobby?.Id.ToString() ?? "How did you do this?");
     }
 
     /// <summary> Fetches the list of public lobbies. </summary>
     public static void FetchLobbies(Cons<Lobby> cons)
     {
+        Log.Debug("Fetching the list of public lobbies...");
         SteamMatchmaking.LobbyList.RequestAsync().ContinueWith(task => task.Result.Each(l => l.Data.Any(p => p.Key == "light"), cons));
     }
 
