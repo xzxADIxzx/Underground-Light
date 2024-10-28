@@ -7,6 +7,8 @@ public partial class Menus : Singleton<Menus>
 {
     /// <summary> All interface elements. There are few of them, so as not to interfere with immersion. </summary>
     public Panel MainMenu, Host, Join, Settings;
+    /// <summary> Exit button contains a little detail. </summary>
+    public Button ExitButton;
 
     public override void _Ready()
     {
@@ -16,6 +18,7 @@ public partial class Menus : Singleton<Menus>
         Host = GetNode<Panel>("viewport/host");
         Join = GetNode<Panel>("viewport/join");
         Settings = GetNode<Panel>("viewport/settings");
+        ExitButton = MainMenu.GetNode<Button>("exit");
 
         ShowMain();
     }
@@ -33,4 +36,10 @@ public partial class Menus : Singleton<Menus>
 
     /// <summary> Closes the game application. </summary>
     public void Exit() => GetTree().Quit();
+
+    /// <summary> Changes the text of the exit button, making it creepy. </summary>
+    public void MakeExitCreepy() => ExitButton.Text = "THERE IS NO EXIT";
+
+    /// <summary> Changes the text of the exit button, making it normal. </summary>
+    public void MakeExitNormal() => ExitButton.Text = "EXIT";
 }

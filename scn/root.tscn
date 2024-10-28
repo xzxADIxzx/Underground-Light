@@ -417,6 +417,8 @@ text = "CANCEL"
 [connection signal="pressed" from="menus/viewport/main-menu/host" to="menus" method="ShowHost"]
 [connection signal="pressed" from="menus/viewport/main-menu/join" to="menus" method="ShowJoin"]
 [connection signal="pressed" from="menus/viewport/main-menu/settings" to="menus" method="ShowSettings"]
+[connection signal="focus_entered" from="menus/viewport/main-menu/exit" to="menus" method="MakeExitCreepy"]
+[connection signal="focus_exited" from="menus/viewport/main-menu/exit" to="menus" method="MakeExitNormal"]
 [connection signal="pressed" from="menus/viewport/main-menu/exit" to="menus" method="Exit"]
 [connection signal="pressed" from="menus/viewport/host/back" to="menus" method="ShowMain"]
 [connection signal="pressed" from="menus/viewport/join/back" to="menus" method="ShowMain"]
