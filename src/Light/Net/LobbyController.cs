@@ -43,7 +43,7 @@ public static class LobbyController
         if (Online) return;
         Log.Info("Creating a lobby...");
 
-        SteamMatchmaking.CreateLobbyAsync(4).ContinueWith(task =>
+        SteamMatchmaking.CreateLobbyAsync(8).ContinueWith(task =>
         {
             IsOwner = true;
             Lobby = task.Result;

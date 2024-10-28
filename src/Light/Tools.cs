@@ -9,6 +9,18 @@ public static class Tools
 {
     #region enumerables
 
+    /// <summary> Returns the index of the object in the given enumerable. </summary>
+    public static int IndexOf<T>(this IEnumerable<T> seq, T obj)
+    {
+        int index = 0;
+        foreach (var item in seq)
+        {
+            if (item.Equals(obj)) return index;
+            index++;
+        }
+        return -1;
+    }
+
     /// <summary> Iterates each object in the given enumerable. </summary>
     public static void Each<T>(this IEnumerable<T> seq, Cons<T> cons)
     {
