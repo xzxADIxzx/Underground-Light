@@ -11,6 +11,11 @@ public partial class Menus : Singleton<Menus>
     /// <summary> Exit button contains a little detail. </summary>
     public Button ExitButton;
 
+    /// <summary> Sound that is played when focusing a button. </summary>
+    public AudioStreamPlayer FocusSound;
+    /// <summary> The last button that had a focus. </summary>
+    public Button LastFocused;
+
     public override void _Ready()
     {
         Inst = this;
@@ -20,7 +25,19 @@ public partial class Menus : Singleton<Menus>
         Join = GetNode<HudPanel>("viewport/join");
         Settings = GetNode<HudPanel>("viewport/settings");
         ExitButton = MainMenu.GetNode<Button>("exit");
+        FocusSound = GetNode<AudioStreamPlayer>("focus-sound");
 
+        GetNode("viewport").GetChildren().Each(menu => menu.GetChildren().Each(child =>
+        {
+            if (child is not Button button) return;
+
+            button.FocusEntered += () => PlaySound(button);
+            button.MouseEntered += () => PlaySound(button);
+            button.MouseExited += () =>
+            {
+                if (LastFocused == button) LastFocused = null;
+            };
+        }));
         ShowMain();
     }
 
@@ -43,4 +60,14 @@ public partial class Menus : Singleton<Menus>
 
     /// <summary> Changes the text of the exit button, making it normal. </summary>
     public void MakeExitNormal() => ExitButton.Text = "EXIT";
+
+    /// <summary> Plays the button focus sound. Up to three at a time. </summary>
+    public void PlaySound(Button button)
+    {
+        if (LastFocused == button) return;
+        LastFocused = button;
+
+        FocusSound.PitchScale = (float)GD.RandRange(0.99f, 1.01f);
+        FocusSound.Play();
+    }
 }
