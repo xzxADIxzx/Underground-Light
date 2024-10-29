@@ -99,10 +99,14 @@ public static class LobbyController
     }
 
     /// <summary> Fetches the list of public lobbies. </summary>
-    public static void FetchLobbies(Cons<Lobby> cons)
+    public static void FetchLobbies(Cons<Lobby> cons, Call done)
     {
         Log.Debug("Fetching the list of public lobbies...");
-        SteamMatchmaking.LobbyList.RequestAsync().ContinueWith(task => task.Result.Each(l => l.Data.Any(p => p.Key == "light"), cons));
+        SteamMatchmaking.LobbyList.RequestAsync().ContinueWith(task => Events.Post(() =>
+        {
+            task.Result.Each(l => l.Data.Any(p => p.Key == "light"), cons);
+            done();
+        }));
     }
 
     #endregion

@@ -64,7 +64,7 @@ public partial class Menus : Singleton<Menus>
     /// <summary> Plays the button focus sound. Up to three at a time. </summary>
     public void PlaySound(Button button)
     {
-        if (LastFocused == button) return;
+        if (LastFocused == button || button.Disabled) return;
         LastFocused = button;
 
         FocusSound.PitchScale = (float)GD.RandRange(0.99f, 1.01f);

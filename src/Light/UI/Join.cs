@@ -10,12 +10,14 @@ public partial class Join : HudPanel
 {
     private LineEdit code;
     private Button join, refresh;
+    private FlowContainer list;
 
     public override void _Ready()
     {
         code = GetNode<LineEdit>("code");
         join = GetNode<Button>("join");
         refresh = GetNode<Button>("refresh");
+        list = GetNode<FlowContainer>("list/container");
     }
 
     /// <summary> Checks the validity of the lobby code in the line edit. </summary>
@@ -32,4 +34,35 @@ public partial class Join : HudPanel
             // TODO notification
         }
     });
+
+    /// <summary> Updates the list of public lobbies. </summary>
+    public void RefreshPublicLobbies()
+    {
+        if (refresh.Disabled) return;
+
+        refresh.Disabled = true;
+        refresh.Text = "REFRESHING";
+
+        list.GetChildren().Each(n => n.QueueFree());
+
+        LobbyController.FetchLobbies(lobby =>
+        {
+            var btn = new Button
+            {
+                Text = $"{lobby.GetData("name")}\n{lobby.MemberCount}/{lobby.MaxMembers} I {lobby.GetData("level")}",
+                ClipText = true,
+                Alignment = HorizontalAlignment.Left,
+                CustomMinimumSize = new(400f, 96f)
+            };
+            btn.AddThemeFontSizeOverride("font_size", 28);
+            btn.Pressed += () => JoinLobby(lobby);
+
+            list.AddChild(btn);
+
+        }, () =>
+        {
+            refresh.Disabled = false;
+            refresh.Text = "REFRESH";
+        });
+    }
 }

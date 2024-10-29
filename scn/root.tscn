@@ -385,6 +385,20 @@ text = "PUBLIC LOBBIES"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="list" type="ScrollContainer" parent="menus/viewport/join"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = 352.0
+offset_right = 200.0
+offset_bottom = -112.0
+
+[node name="container" type="HFlowContainer" parent="menus/viewport/join/list"]
+layout_mode = 2
+
 [node name="refresh" type="Button" parent="menus/viewport/join"]
 layout_mode = 1
 anchors_preset = -1
@@ -458,6 +472,7 @@ text = "CANCEL"
 [connection signal="pressed" from="menus/viewport/host/back" to="menus" method="ShowMain"]
 [connection signal="text_changed" from="menus/viewport/join/code" to="menus/viewport/join" method="VerifyLobbyCode" unbinds=1]
 [connection signal="pressed" from="menus/viewport/join/join" to="menus/viewport/join" method="JoinLobby"]
+[connection signal="pressed" from="menus/viewport/join/refresh" to="menus/viewport/join" method="RefreshPublicLobbies"]
 [connection signal="pressed" from="menus/viewport/join/back" to="menus" method="ShowMain"]
 [connection signal="pressed" from="menus/viewport/settings/apply" to="menus" method="ShowMain"]
 [connection signal="pressed" from="menus/viewport/settings/cancel" to="menus" method="ShowMain"]
