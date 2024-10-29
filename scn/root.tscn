@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dad8r4l3b2mhe"]
+[gd_scene load_steps=23 format=3 uid="uid://dad8r4l3b2mhe"]
 
 [ext_resource type="Script" path="res://src/Light/Singletons/Steam.cs" id="1_jdepp"]
 [ext_resource type="Script" path="res://src/Light/Events.cs" id="1_xgg1g"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://bnh802foy6xig" path="res://sounds/focus.wav" id="11_6x753"]
 [ext_resource type="Script" path="res://src/Light/UI/HudPanel.cs" id="11_gt7uv"]
 [ext_resource type="Script" path="res://src/Light/UI/Host.cs" id="13_68jfl"]
+[ext_resource type="Script" path="res://src/Light/UI/Join.cs" id="15_hpmc3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ll71p"]
 shader = ExtResource("3_nqma2")
@@ -332,7 +333,7 @@ offset_right = -64.0
 offset_bottom = -64.0
 pivot_offset = Vector2(896, 476)
 theme = ExtResource("8_y7jn0")
-script = ExtResource("11_gt7uv")
+script = ExtResource("15_hpmc3")
 
 [node name="invitation-code" type="Label" parent="menus/viewport/join"]
 layout_mode = 1
@@ -368,6 +369,7 @@ offset_left = -200.0
 offset_top = 160.0
 offset_right = 200.0
 offset_bottom = 208.0
+disabled = true
 text = "JOIN"
 
 [node name="public-lobbies" type="Label" parent="menus/viewport/join"]
@@ -382,6 +384,17 @@ offset_bottom = 304.0
 text = "PUBLIC LOBBIES"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="refresh" type="Button" parent="menus/viewport/join"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 304.0
+offset_right = 200.0
+offset_bottom = 352.0
+text = "REFRESH"
 
 [node name="back" type="Button" parent="menus/viewport/join"]
 layout_mode = 1
@@ -443,6 +456,8 @@ text = "CANCEL"
 [connection signal="pressed" from="menus/viewport/host/accessibility" to="menus/viewport/host" method="ChangeAccessibility"]
 [connection signal="pressed" from="menus/viewport/host/host" to="menus/viewport/host" method="HostLobby"]
 [connection signal="pressed" from="menus/viewport/host/back" to="menus" method="ShowMain"]
+[connection signal="text_changed" from="menus/viewport/join/code" to="menus/viewport/join" method="VerifyLobbyCode" unbinds=1]
+[connection signal="pressed" from="menus/viewport/join/join" to="menus/viewport/join" method="JoinLobby"]
 [connection signal="pressed" from="menus/viewport/join/back" to="menus" method="ShowMain"]
 [connection signal="pressed" from="menus/viewport/settings/apply" to="menus" method="ShowMain"]
 [connection signal="pressed" from="menus/viewport/settings/cancel" to="menus" method="ShowMain"]
