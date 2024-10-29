@@ -395,6 +395,9 @@ offset_left = -200.0
 offset_top = 352.0
 offset_right = 200.0
 offset_bottom = -112.0
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
 
 [node name="container" type="HFlowContainer" parent="menus/viewport/join/list"]
 layout_mode = 2

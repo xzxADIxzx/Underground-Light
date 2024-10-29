@@ -52,7 +52,7 @@ public partial class Join : HudPanel
                 Text = $"{lobby.GetData("name")}\n{lobby.MemberCount}/{lobby.MaxMembers} I {lobby.GetData("level")}",
                 ClipText = true,
                 Alignment = HorizontalAlignment.Left,
-                CustomMinimumSize = new(400f, 96f)
+                CustomMinimumSize = new(400f - 8f, 96f)
             };
             btn.AddThemeFontSizeOverride("font_size", 28);
             btn.Pressed += () => JoinLobby(lobby);

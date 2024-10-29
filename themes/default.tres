@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://btbl6i77wh1w4"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://btbl6i77wh1w4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j6kdd"]
 content_margin_left = 8.0
@@ -34,6 +34,14 @@ border_width_right = 32
 border_width_bottom = 32
 border_color = Color(0.533333, 0.8, 0.866667, 0.8)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qibc8"]
+border_width_right = 8
+border_color = Color(0.533333, 0.8, 0.866667, 0.533333)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4378"]
+border_width_right = 8
+border_color = Color(0.533333, 0.8, 0.866667, 0.533333)
+
 [resource]
 default_font_size = 32
 Button/colors/font_color = Color(0.533333, 0.8, 0.866667, 0.8)
@@ -61,3 +69,8 @@ LineEdit/font_sizes/font_size = 28
 LineEdit/styles/focus = SubResource("StyleBoxEmpty_s0mct")
 LineEdit/styles/normal = SubResource("StyleBoxFlat_40fih")
 Panel/styles/panel = SubResource("StyleBoxFlat_ye6c4")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_qibc8")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_qibc8")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_qibc8")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_m4378")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_m4378")
