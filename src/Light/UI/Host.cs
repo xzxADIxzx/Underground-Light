@@ -2,6 +2,7 @@ namespace Light.UI;
 
 using Godot;
 using Light.Net;
+using Light.Singletons;
 
 /// <summary> Animated panel containing the host menu. </summary>
 public partial class Host : HudPanel
@@ -33,6 +34,6 @@ public partial class Host : HudPanel
             case 2: lobby.SetPublic(); break;
         }
 
-        // GameLoop.Start();
+        GameLoop.Inst.Start();
     });
 }

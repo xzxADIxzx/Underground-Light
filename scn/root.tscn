@@ -1,5 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://dad8r4l3b2mhe"]
+[gd_scene load_steps=24 format=3 uid="uid://dad8r4l3b2mhe"]
 
+[ext_resource type="Script" path="res://src/Light/Singletons/GameLoop.cs" id="1_8h44d"]
 [ext_resource type="Script" path="res://src/Light/Singletons/Steam.cs" id="1_jdepp"]
 [ext_resource type="Script" path="res://src/Light/Events.cs" id="1_xgg1g"]
 [ext_resource type="Script" path="res://src/Light/Singletons/Overlays.cs" id="2_e1d07"]
@@ -42,6 +43,9 @@ blend_mode = 1
 light_mode = 1
 
 [node name="root" type="Node"]
+
+[node name="game-loop" type="Node" parent="."]
+script = ExtResource("1_8h44d")
 
 [node name="events" type="Node" parent="."]
 script = ExtResource("1_xgg1g")

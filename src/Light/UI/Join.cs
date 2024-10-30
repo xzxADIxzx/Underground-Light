@@ -2,6 +2,7 @@ namespace Light.UI;
 
 using Godot;
 using Light.Net;
+using Light.Singletons;
 using Steamworks;
 using Steamworks.Data;
 
@@ -26,8 +27,8 @@ public partial class Join : HudPanel
     /// <summary> Joins the given lobby and then starts the game loop if succeed, otherwise shows an error popup. </summary>
     public void JoinLobby(Lobby? lobby) => LobbyController.JoinLobby(lobby ?? new(ulong.Parse(code.Text)), result =>
     {
-        if (result == RoomEnter.Success) ;
-        // GameLoop.Start();
+        if (result == RoomEnter.Success)
+            GameLoop.Inst.Start();
         else
         {
             Log.Warning($"Couldn't join the lobby, the result is {result}");
