@@ -27,6 +27,10 @@ public partial class Menus : Singleton<Menus>
         ExitButton = MainMenu.GetNode<Button>("exit");
         FocusSound = GetNode<AudioStreamPlayer>("focus-sound");
 
+        // update the version label (debug purpose)
+        MainMenu.GetNode<Label>("version").Text = $" v{GameLoop.Version.ToUpper()} ";
+
+        // add a sound effect for buttons
         GetNode("viewport").GetChildren().Each(menu => menu.GetChildren().Each(child =>
         {
             if (child is not Button button) return;

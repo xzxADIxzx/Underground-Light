@@ -214,6 +214,20 @@ offset_bottom = 120.0
 text = "EXIT"
 alignment = 0
 
+[node name="version" type="Label" parent="menus/viewport/main-menu"]
+modulate = Color(1, 1, 1, 0.533333)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = -96.0
+offset_bottom = -64.0
+theme_override_font_sizes/font_size = 24
+text = " VERSION "
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="host" type="Panel" parent="menus/viewport"]
 anchors_preset = -1
 anchor_right = 1.0
