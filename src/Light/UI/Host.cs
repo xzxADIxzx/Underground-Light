@@ -25,7 +25,12 @@ public partial class Host : HudPanel
     /// <summary> Hosts a lobby, applies the settings and then starts the game loop. </summary>
     public void HostLobby() => LobbyController.CreateLobby(lobby =>
     {
+        if (!lobby.Id.IsValid) Log.Warning("The lobby is invalid");
+
+        lobby.SetJoinable(true);
+        lobby.SetData("light", "true");
         lobby.SetData("name", name.Text == string.Empty ? "DESCENDING TO THE ABYSS" : name.Text);
+        lobby.SetData("level", "Elevator");
 
         switch (Levels.IndexOf(accessibility.Text))
         {

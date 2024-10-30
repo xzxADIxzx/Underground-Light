@@ -45,12 +45,11 @@ public static class LobbyController
 
         SteamMatchmaking.CreateLobbyAsync(8).ContinueWith(task =>
         {
-            IsOwner = true;
-            Lobby = task.Result;
-
-            Lobby?.SetJoinable(true);
-            Lobby?.SetData("light", "true");
-
+            if (task.Result != null)
+            {
+                IsOwner = true;
+                Lobby = task.Result;
+            }
             cons(Lobby.Value);
         });
     }
