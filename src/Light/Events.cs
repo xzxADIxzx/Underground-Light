@@ -37,7 +37,7 @@ public partial class Events : Node
 
     public override void _Ready()
     {
-        SteamMatchmaking.OnLobbyDataChanged += lobby => OnLobbyAction.Fire();
+        SteamMatchmaking.OnLobbyDataChanged += lobby => Post(OnLobbyAction.Fire);
         SteamMatchmaking.OnLobbyEntered += lobby => Post(OnLobbyEntered.Fire);
 
         SteamFriends.OnGameLobbyJoinRequested += (lobby, id) => OnLobbyInvite.Fire(lobby);

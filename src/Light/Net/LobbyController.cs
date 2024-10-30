@@ -104,7 +104,9 @@ public static class LobbyController
         Log.Debug("Fetching the list of public lobbies...");
         SteamMatchmaking.LobbyList.RequestAsync().ContinueWith(task => Events.Post(() =>
         {
-            task.Result.Each(l => l.Data.Any(p => p.Key == "light"), cons);
+            if (task.Result == null) Log.Warning("The list of public lobbies is null");
+
+            task?.Result.Each(l => l.Data.Any(p => p.Key == "light"), cons);
             done();
         }));
     }
