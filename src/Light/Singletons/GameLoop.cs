@@ -1,6 +1,7 @@
 namespace Light.Singletons;
 
 using Godot;
+using Light.IO;
 using Light.Net;
 
 /// <summary> Singleton responsible for the general game process. </summary>
@@ -15,6 +16,7 @@ public partial class GameLoop : Singleton<GameLoop>
     {
         Inst = this;
 
+        Pointers.Allocate();
         LobbyController.Load();
         // Networking.Load();
     }
