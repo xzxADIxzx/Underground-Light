@@ -34,6 +34,8 @@ public partial class Events : Node
 
     /// <summary> List of tasks that will need to be completed on the next frame. </summary>
     public static Queue<Call> Tasks = new();
+    /// <summary> Time in seconds from the moment the game was launched. </summary>
+    public static float Time;
 
     public override void _Ready()
     {
@@ -48,6 +50,9 @@ public partial class Events : Node
 
     public override void _Process(double delta)
     {
+        // it's strange that Godot does not accumulate this value
+        Time += (float)delta;
+
         int amount = Tasks.Count;
         for (int i = 0; i < amount; i++) Tasks.Dequeue().Invoke();
     }

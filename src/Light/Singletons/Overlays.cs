@@ -10,8 +10,6 @@ public partial class Overlays : Singleton<Overlays>
     /// <summary> Parameters of the strength of shaders. </summary>
     public float VignetteValue, ScaleValue, BloodValue;
 
-    /// <summary> It's strange that Godot does not accumulate this value. </summary>
-    private float time;
     /// <summary> Whether the local player is alive. </summary>
     private bool alive => hp > 0;
 
@@ -29,15 +27,13 @@ public partial class Overlays : Singleton<Overlays>
 
     public override void _Process(double delta)
     {
-        time += (float)delta;
-
         void Move(ref float value, float speed, float target) => value = Mathf.Lerp(value, target, speed * (float)delta);
 
         // the local player is dying
         if (alive && hp <= 60)
         {
             float progress = 1f - hp / 60f;
-            float psinwave = Mathf.Sin(time * progress * Mathf.Tau) + 1f;
+            float psinwave = Mathf.Sin(Events.Time * progress * Mathf.Tau) + 1f;
 
             Move(ref VignetteValue, 4f, progress * (.75f + psinwave / 8f));
             Move(ref ScaleValue, 4f, progress * (.50f + psinwave / 4f));
