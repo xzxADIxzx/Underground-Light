@@ -2,6 +2,7 @@ global using static Light.Tools;
 
 namespace Light;
 
+using Light.Content;
 using System.Collections.Generic;
 
 /// <summary> Set of different tools for simplifying life and systematization of code. </summary>
@@ -67,6 +68,15 @@ public static class Tools
 
     /// <summary> Function that consumes one value and returns another. </summary>
     public delegate K Func<T, K>(T t);
+
+    #endregion
+    #region entities
+
+    /// <summary> Whether the type is a player. </summary>
+    public static bool IsPlayer(this EntityType type) => type == EntityType.Player;
+
+    /// <summary> Whether the type is an enemy. </summary>
+    public static bool IsEnemy(this EntityType type) => type >= EntityType.Player;
 
     #endregion
 }
