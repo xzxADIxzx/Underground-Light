@@ -6,7 +6,7 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <LangVersion>latest</LangVersion>
     <RootNamespace>Light</RootNamespace>
-    <NoWarn>IDE0028, IDE0044, IDE0062, IDE0130, IDE0290, IDE0300, IDE1006, CA2211</NoWarn>
+    <NoWarn>IDE0028, IDE0044, IDE0062, IDE0130, IDE0290, IDE0300, IDE1006, CA2211, CS0108</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
