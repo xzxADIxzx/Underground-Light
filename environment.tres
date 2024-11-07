@@ -1,0 +1,24 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://btdqbslvn6du5"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_oinrc"]
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_10u0j"]
+generate_mipmaps = false
+normalize = false
+noise = SubResource("FastNoiseLite_oinrc")
+
+[resource]
+background_mode = 1
+background_color = Color(0.0352941, 0.133333, 0.152941, 1)
+background_energy_multiplier = 0.4
+ssao_enabled = true
+ssao_intensity = 4.0
+glow_enabled = true
+glow_levels/1 = 1.0
+glow_levels/3 = 0.8
+glow_levels/4 = 0.4
+glow_levels/5 = 0.2
+glow_blend_mode = 1
+glow_map_strength = 0.5
+glow_map = SubResource("NoiseTexture2D_10u0j")
