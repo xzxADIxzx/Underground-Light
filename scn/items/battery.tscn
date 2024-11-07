@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfmp66soa0v76"]
+
+[ext_resource type="PackedScene" uid="uid://bt45g3d5fthf3" path="res://models/items/battery.blend" id="1_bpc53"]
+[ext_resource type="Material" uid="uid://d0glfwnqnfevu" path="res://models/items/battery-glass.tres" id="3_qlrev"]
+[ext_resource type="Material" uid="uid://c4w33joq5i4kd" path="res://models/items/battery-emission.tres" id="4_4pvcf"]
+[ext_resource type="Material" uid="uid://d2wwdfiy8wye0" path="res://models/items/battery-light.tres" id="5_1yirq"]
+
+[node name="battery" instance=ExtResource("1_bpc53")]
+
+[node name="glass" parent="." index="0"]
+surface_material_override/0 = ExtResource("3_qlrev")
+
+[node name="ring" parent="." index="3"]
+surface_material_override/0 = ExtResource("4_4pvcf")
+
+[node name="light" parent="." index="4"]
+surface_material_override/0 = ExtResource("5_1yirq")
+
+[node name="half-rings" parent="." index="5"]
+surface_material_override/0 = ExtResource("4_4pvcf")

@@ -6,5 +6,6 @@ lib/*
 *.sln
 *.import
 *.directory
+*.blend1
 
 steam_appid.txt
