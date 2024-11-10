@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ybdfrg1kdvuf"]
+
+[ext_resource type="Texture2D" uid="uid://bvwf37wmngphq" path="res://models/items/battery.png" id="1_tqex6"]
+
+[resource]
+albedo_texture = ExtResource("1_tqex6")
+texture_filter = 2

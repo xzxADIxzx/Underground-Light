@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://3d4s65spniss"]
+
+[ext_resource type="Shader" path="res://shaders/pillars-of-light.gdshader" id="1_h5x7b"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_h5x7b")
+shader_parameter/color = Color(0.984314, 0.984314, 0.545098, 1)
+shader_parameter/strength = 3.0

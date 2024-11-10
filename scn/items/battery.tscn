@@ -1,20 +1,76 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfmp66soa0v76"]
+[gd_scene load_steps=6 format=3 uid="uid://dfmp66soa0v76"]
 
 [ext_resource type="PackedScene" uid="uid://bt45g3d5fthf3" path="res://models/items/battery.blend" id="1_bpc53"]
 [ext_resource type="Material" uid="uid://d0glfwnqnfevu" path="res://models/items/battery-glass.tres" id="3_qlrev"]
 [ext_resource type="Material" uid="uid://c4w33joq5i4kd" path="res://models/items/battery-emission.tres" id="4_4pvcf"]
-[ext_resource type="Material" uid="uid://d2wwdfiy8wye0" path="res://models/items/battery-light.tres" id="5_1yirq"]
+[ext_resource type="Material" uid="uid://3d4s65spniss" path="res://models/items/battery-pillars.tres" id="4_e1lbi"]
+[ext_resource type="Material" uid="uid://ybdfrg1kdvuf" path="res://models/items/battery-carcas.tres" id="5_jaao7"]
 
 [node name="battery" instance=ExtResource("1_bpc53")]
 
 [node name="glass" parent="." index="0"]
 surface_material_override/0 = ExtResource("3_qlrev")
 
-[node name="ring" parent="." index="3"]
+[node name="rings" parent="." index="1"]
+layers = 4
+cast_shadow = 0
 surface_material_override/0 = ExtResource("4_4pvcf")
 
-[node name="light" parent="." index="4"]
-surface_material_override/0 = ExtResource("5_1yirq")
+[node name="pillars" parent="." index="2"]
+layers = 4
+cast_shadow = 0
+lod_bias = 128.0
+surface_material_override/0 = ExtResource("4_e1lbi")
 
-[node name="half-rings" parent="." index="5"]
-surface_material_override/0 = ExtResource("4_4pvcf")
+[node name="carcas" parent="." index="3"]
+surface_material_override/0 = ExtResource("5_jaao7")
+
+[node name="light-top" type="OmniLight3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48, 0)
+light_color = Color(0.984314, 0.984314, 0.545098, 1)
+light_specular = 0.0
+light_cull_mask = 4294967291
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_opacity = 0.8
+shadow_blur = 8.0
+
+[node name="light-middle-right" type="OmniLight3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13, 0, 0)
+light_color = Color(0.984314, 0.984314, 0.545098, 1)
+light_specular = 0.0
+light_cull_mask = 4294967291
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_blur = 8.0
+
+[node name="light-middle-left" type="OmniLight3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13, 0, 0)
+light_color = Color(0.984314, 0.984314, 0.545098, 1)
+light_specular = 0.0
+light_cull_mask = 4294967291
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_blur = 8.0
+
+[node name="light-bottom-right" type="OmniLight3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19, -0.34, 0)
+light_color = Color(0.984314, 0.984314, 0.545098, 1)
+light_specular = 0.0
+light_cull_mask = 4294967291
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_reverse_cull_face = true
+shadow_opacity = 0.8
+shadow_blur = 8.0
+
+[node name="light-bottom-left" type="OmniLight3D" parent="." index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.189804, -0.34, 0)
+light_color = Color(0.984314, 0.984314, 0.545098, 1)
+light_specular = 0.0
+light_cull_mask = 4294967291
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_reverse_cull_face = true
+shadow_opacity = 0.8
+shadow_blur = 8.0
