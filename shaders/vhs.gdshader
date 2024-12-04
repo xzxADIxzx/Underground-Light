@@ -23,16 +23,16 @@ void fragment()
 	vec4 col = texture(screen, cuv);
 
 	// grille
-	float r = smoothstep(0.88, 0.92, abs(sin(puv.x)));
+	float r = smoothstep(0.88, 0.92, abs(sin(PI * 1.0 / 3.0 + puv.x)));
 	col.r = mix(col.r, col.r * r, 0.3);
 
-	float g = smoothstep(0.88, 0.92, abs(sin(PI / 3.0 + puv.x)));
+	float g = smoothstep(0.88, 0.92, abs(sin(PI * 0.0 / 3.0 + puv.x)));
 	col.g = mix(col.g, col.g * g, 0.3);
 
 	float b = smoothstep(0.88, 0.92, abs(sin(PI * 2.0 / 3.0 + puv.x)));
 	col.b = mix(col.b, col.b * b, 0.3);
 
-	float h = smoothstep(0.25, 0.55, abs(sin(puv.y)));
+	float h = smoothstep(0.25, 0.45, abs(sin(puv.y)));
 	col.rgb = mix(col.rgb, col.rgb * h, 0.4);
 
 	// brightness
