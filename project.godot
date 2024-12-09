@@ -36,6 +36,12 @@ texture={
 "detect_3d/compress_to": 0
 }
 
+[layer_names]
+
+3d_render/layer_1="default"
+3d_render/layer_2="overlay"
+3d_render/layer_3="ignored-by-light"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
