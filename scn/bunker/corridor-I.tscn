@@ -28,3 +28,12 @@ surface_material_override/0 = ExtResource("2_4odiq")
 
 [node name="pipe" parent="." index="7"]
 surface_material_override/0 = ExtResource("2_4odiq")
+
+[node name="valve-0" parent="." index="8"]
+surface_material_override/0 = ExtResource("2_4odiq")
+
+[node name="valve-1" parent="." index="9"]
+surface_material_override/0 = ExtResource("2_4odiq")
+
+[node name="valve-2" parent="." index="10"]
+surface_material_override/0 = ExtResource("2_4odiq")
