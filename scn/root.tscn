@@ -20,6 +20,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ll71p"]
 shader = ExtResource("3_nqma2")
+shader_parameter/dithering = Projection(0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5)
 shader_parameter/strength = 2.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6gwgw"]
