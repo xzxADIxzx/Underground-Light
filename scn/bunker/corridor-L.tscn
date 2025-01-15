@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5i6bxmg6vo2m"]
+
+[ext_resource type="PackedScene" uid="uid://c52cwdbxiyvvb" path="res://models/bunker/corridor-L.blend" id="1_tq8mm"]
+[ext_resource type="Material" uid="uid://pqjnol3fnfv8" path="res://models/bunker/corridor.tres" id="2_mk8fq"]
+
+[node name="corridor-L" instance=ExtResource("1_tq8mm")]
+
+[node name="concrete" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_mk8fq")
+
+[node name="brick-0" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_mk8fq")
+
+[node name="brick-1" parent="." index="2"]
+surface_material_override/0 = ExtResource("2_mk8fq")
+
+[node name="brick-2" parent="." index="3"]
+surface_material_override/0 = ExtResource("2_mk8fq")
+
+[node name="brick-4" parent="." index="4"]
+surface_material_override/0 = ExtResource("2_mk8fq")
+
+[node name="pipes" parent="." index="5"]
+surface_material_override/0 = ExtResource("2_mk8fq")
+
+[node name="drain-0" parent="." index="6"]
+surface_material_override/0 = ExtResource("2_mk8fq")
+
+[node name="pipe" parent="." index="7"]
+surface_material_override/0 = ExtResource("2_mk8fq")
+
+[node name="valve-0" parent="." index="8"]
+surface_material_override/0 = ExtResource("2_mk8fq")
+
+[node name="valve-1" parent="." index="9"]
+surface_material_override/0 = ExtResource("2_mk8fq")
+
+[node name="drain-1" parent="." index="10"]
+surface_material_override/0 = ExtResource("2_mk8fq")

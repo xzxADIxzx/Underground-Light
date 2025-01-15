@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cras4w80xagwy"]
 
 [ext_resource type="PackedScene" uid="uid://bk57p1j64c1ik" path="res://models/bunker/corridor-I.blend" id="1_s81bw"]
-[ext_resource type="Material" uid="uid://pqjnol3fnfv8" path="res://models/bunker/corridor-I.tres" id="2_4odiq"]
+[ext_resource type="Material" uid="uid://pqjnol3fnfv8" path="res://models/bunker/corridor.tres" id="2_4odiq"]
 
 [node name="corridor-I" instance=ExtResource("1_s81bw")]
 

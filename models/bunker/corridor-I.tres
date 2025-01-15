@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://pqjnol3fnfv8"]
-
-[ext_resource type="Texture2D" uid="uid://dv68t8f5oaoc0" path="res://models/bunker/corridor-I.png" id="1_hgat5"]
-
-[resource]
-albedo_texture = ExtResource("1_hgat5")
-texture_filter = 2
